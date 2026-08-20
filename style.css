@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial black', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #09c92c;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container Principal */
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.container h2 {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Estrutura do Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.flex-1 { flex: 1; }
+.flex-3 { flex: 3; }
+
+/* Rótulos e Campos de Entrada */
+label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #1e293b;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Estilo dos campos preenchidos automaticamente */
+input[readonly] {
+    background-color: #f8fafc;
+    color: #475569;
+}
