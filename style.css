@@ -14,7 +14,7 @@ body {
     padding: 20px;
 }
 
-/* Container Principal */
+
 .container {
     background: #ffffff;
     width: 100%;
@@ -31,7 +31,7 @@ body {
     text-align: center;
 }
 
-/* Estrutura do Formulário */
+
 form {
     display: flex;
     flex-direction: column;
@@ -52,7 +52,7 @@ form {
 .flex-1 { flex: 1; }
 .flex-3 { flex: 3; }
 
-/* Rótulos e Campos de Entrada */
+
 label {
     font-size: 0.875rem;
     font-weight: 600;
@@ -76,7 +76,7 @@ input[type="text"]:focus {
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }
 
-/* Estilo dos campos preenchidos automaticamente */
+
 input[readonly] {
     background-color: #f8fafc;
     color: #475569;
