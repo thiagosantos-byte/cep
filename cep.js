@@ -1,18 +1,18 @@
-// Adiciona o evento quando o campo CEP perde o foco (onblur)
+
 document.addEventListener('DOMContentLoaded', () => {
     const inputCep = document.getElementById('cep');
 
-    // Limita o campo a apenas números e formata o CEP em tempo real
+  
     inputCep.addEventListener('input', (e) => {
-        // 1. Remove qualquer caractere que NÃO seja número
+     
         let valor = e.target.value.replace(/\D/g, '');
 
-        // 2. Limita a no máximo 8 dígitos numéricos
+       
         if (valor.length > 8) {
             valor = valor.slice(0, 8);
         }
 
-        // 3. Aplica a máscara 00000-000 dinamicamente
+        
         if (valor.length > 5) {
             e.target.value = `${valor.slice(0, 5)}-${valor.slice(5)}`;
         } else {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mantém a consulta de CEP ao perder o foco
+   
     inputCep.addEventListener('blur', (e) => {
         pesquisacep(e.target.value);
     });
@@ -35,16 +35,16 @@ function limpaFormularioCep() {
 }
 
 async function pesquisacep(valor) {
-    // Nova variável "cep" somente com dígitos
+
     const cep = valor.replace(/\D/g, '');
 
-    // Verifica se campo cep possui valor informado
+    
     if (cep === "") {
         limpaFormularioCep();
         return;
     }
 
-    // Expressão regular para validar o CEP (8 dígitos numéricos)
+   
     const validacep = /^[0-9]{8}$/;
 
     if (!validacep.test(cep)) {
@@ -53,7 +53,7 @@ async function pesquisacep(valor) {
         return;
     }
 
-    // Preenche os campos com "..." enquanto consulta o webservice
+    
     document.getElementById('rua').value = "...";
     document.getElementById('bairro').value = "...";
     document.getElementById('cidade').value = "...";
@@ -61,7 +61,7 @@ async function pesquisacep(valor) {
     document.getElementById('ibge').value = "...";
 
     try {
-        // Requisição moderna usando Fetch API
+        
         const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
         const conteudo = await response.json();
 
